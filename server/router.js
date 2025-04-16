@@ -1,8 +1,8 @@
 import express from 'express';
 const router = express.Router();
-import  { saveEvent, getEvent }  from './controller/controller.js';
+import  { saveTrack, getTrack }  from './controller/controller.js';
 
-router.get('/events', getEvent);
-router.post('/events', saveEvent);
+router.get('/tracks', getTrack);
+router.post('/tracks', saveTrack);
 
 export default router;

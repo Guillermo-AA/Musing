@@ -1,19 +1,19 @@
-import Event from '../models/model.js'; 
+import Track from '../models/track.js'; 
 
-export async function getEvent (req, res) {
+export async function getTrack (req, res) {
   try {
-    const eventList = await Event.find();
-    if (eventList.length === 0) {
+    const trackList = await Track.find();
+    if (trackList.length === 0) {
       return res.status(200).json([]); 
     }
-    res.status(200).json(eventList);
+    res.status(200).json(trackList);
   } catch (err) {
     console.error(err); 
-    res.status(500).json({ error: 'Failed to fetch events', err});
+    res.status(500).json({ error: 'Failed to fetch tracks', err});
   }
 }
 
-export async function saveEvent (req, res) {
+export async function saveTrack (req, res) {
   const { trackName, artistName } = req.body;
 
  
@@ -22,10 +22,10 @@ export async function saveEvent (req, res) {
   }
 
   try {
-    const event = await Event.create({ trackName, artistName });
-    res.status(201).json(event);
+    const track = await Track.create({ trackName, artistName });
+    res.status(201).json(track);
   } catch (err) {
     console.error(err); 
-    res.status(500).json({ error: 'Failed to save the event', err });
+    res.status(500).json({ error: 'Failed to save the track', err });
   }
 }
