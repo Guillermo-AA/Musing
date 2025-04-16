@@ -1,0 +1,64 @@
+body {
+    background: linear-gradient(to right,
+      rgb(37, 23, 77) 0%,
+      rgb(55, 139, 207) 50%,
+      rgb(37, 23, 77) 100%);
+}
+nav {
+    text-align: center;
+}
+
+nav h1 {
+    display: inline-block;
+    font-size: 36px; 
+    text-align: center;
+    background: linear-gradient(to right, rgb(255, 115, 0), rgb(203, 248, 2));
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#results div {
+    display: grid;
+    grid-template-columns: auto 1fr ; /* Two columns: auto for the image, 1fr for the rest */
+
+    align-items: center; 
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px; 
+}
+
+#results div img {
+    border-radius: 5px;
+}
+
+#results div h3 {
+    font-size: 20px; 
+    color: white;
+    margin: 2px; 
+}
+#results div p {
+    font-size: 16px; 
+    color: black;
+    margin: 2px; 
+}
+
+#results div audio {
+    margin-top: 10px; 
+}
