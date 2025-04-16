@@ -12,8 +12,8 @@
   },
   "keywords": [],
   "author": "",
+  "type": "module",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Guillermo-AA/Musing/issues"
   },
