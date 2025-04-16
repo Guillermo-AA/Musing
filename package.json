@@ -1,0 +1,27 @@
+{
+  "name": "musing",
+  "version": "1.0.0",
+  "description": "A music library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guillermo-AA/Musing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Guillermo-AA/Musing/issues"
+  },
+  "homepage": "https://github.com/Guillermo-AA/Musing#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "eslint": "^9.24.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2"
+  }
+}
