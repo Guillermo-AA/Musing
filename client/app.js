@@ -32,13 +32,21 @@ document.getElementById('searchBtn').addEventListener('click', () => {
         // Render the filtered track info
         filteredResults.forEach(track => {
           const trackDiv = document.createElement('div');
+
+        // Format the release date
+        const releaseDate = new Date(track.releaseDate);
+        const formattedDate = releaseDate.toLocaleDateString('en-GB', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
           trackDiv.innerHTML = `
             <img src="${track.artworkUrl100}" alt="${track.trackName} artwork" />
             <id class="track-info">
+              <h2>${track.trackName}</h2>
               <h3>${track.artistName}</h3>
-              <h3>${track.trackName}</h3>
               <p>${track.collectionName}</p> 
-              <p>${track.releaseDate}</p>
+              <p>Released on: ${formattedDate}</p>
               ${track.previewUrl ? `<audio controls src="${track.previewUrl}"></audio>` : ''}
             </id>
           `;
