@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const trackSchema = new mongoose.Schema({
   trackName: {type: String, required: true},
   artistName: {type: String, required: true},
+  trackId: {type: Number, required: true, unique: true},
 
  /*  
   primaryGenreName: {type: String, required: true},

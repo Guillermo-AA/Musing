@@ -3,7 +3,9 @@
 
 } */
 
+
 body {
+   
     background: linear-gradient(to right,
       rgb(37, 23, 77) 0%,
       rgb(55, 139, 207) 50%,
@@ -37,6 +39,7 @@ nav {
     color: #ffff;
     border: 3px solid #ffffff4d;
     overflow: hidden;
+    cursor: default
 }
 
 .nav-bar h1:hover {
@@ -124,10 +127,9 @@ nav {
 }
 
 #results div {
-
-    width: 700px;
     display: grid;
-    grid-template-columns: auto 1fr ; /* Two columns: auto for the image, 1fr for the rest */
+    width: 600px;
+    grid-template-columns: auto 1fr ; 
     align-items: center; 
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.1); 
@@ -147,6 +149,15 @@ nav {
     display: flex;
     flex-direction: column;
     padding-left: 30px; 
+}
+
+.favicon {
+    display: flex;
+    justify-content: center;    
+}
+
+.favicon img {
+    cursor: pointer;
 }
 
 #results div h2 { 
