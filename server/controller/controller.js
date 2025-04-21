@@ -14,7 +14,7 @@ export async function getTrack (req, res) {
 }
 
 export async function saveTrack (req, res) {
-  const { trackName, artistName } = req.body;
+  /* const { trackName, artistName } = req.body;
 
  
   if (!trackName || !artistName) {
@@ -27,5 +27,26 @@ export async function saveTrack (req, res) {
   } catch (err) {
     console.error(err); 
     res.status(500).json({ error: 'Failed to save the track', err });
+  } */
+
+  const { trackId } = req.body;
+
+  if (!trackId) {
+    return res.status(400).json({ error: 'Track ID is required' });
   }
+
+  try {
+    const track = await Track.findById(trackId);
+    if (track) {
+      return res.status(200).json({ message: 'Track already in favorites' });
+    }
+    const favorite = new Track({ trackId });
+    await favorite.save();
+    res.status(201).json(favorite);
+     
+  } catch (err) {
+    console.error(err); 
+    res.status(500).json({ error: 'Failed to fetch the track', err });
+  }
+  
 }
