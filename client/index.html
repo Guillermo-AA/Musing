@@ -2,23 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Search and preview songs via the iTunes API" />
     <link rel="icon" href="assets/music.png">
     <link rel="stylesheet" href="styles.css" />
     <title>Musing</title>
   </head>
-  <nav>
-    <div class="nav-bar">
-      <h1>&#127926; Welcome to Musing! &#127911;</h1>
-    </div>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search music..." />
-      <input type="image" src="assets/search.png" alt="Search" id="searchBtn" width="24px" height="24px" />
-    </div>
-  </nav>
   <body>
-    <div id="results"></div>
-      <script type="module" src="./app.js"></script>
+    <header>
+      <nav>
+        <div class="nav-bar">
+          <h1>&#127926; Welcome to Musing! &#127911;</h1>
+        </div>
+        <div class="search-bar">
+          <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Search for a song..." />
+            <button type="submit" id="searchBtn">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="results"></div>
+    </main>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
+
 

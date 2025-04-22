@@ -119,36 +119,40 @@ nav {
     filter: invert(1);
 }
 
-#results {
+.results {
     display: flex;
     flex-direction: column;
     align-items: center;
     
 }
 
-#results div {
-    display: grid;
+.results div {
+    display: flex;
     width: 600px;
-    grid-template-columns: auto 1fr ; 
-    align-items: center; 
+    align-items: center;     
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1); 
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px; 
     margin-bottom: 10px; 
 }
 
 
-#results div img {
+.results div img {
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
+.track-container {
+    width: 100%;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 .track-info {
     display: flex;
     flex-direction: column;
-    padding-left: 30px; 
+    padding-left: 30px;
+    text-align: left; 
 }
 
 .favicon {
@@ -160,25 +164,31 @@ nav {
     cursor: pointer;
 }
 
-#results div h2 { 
+.results div h2 { 
     color: white;
     margin: 2px; 
 }
 
-#results div h3 {
+.results div h3 {
     font-size: 20px; 
     color: white;
     margin: 2px; 
 }
 
-#results div p {
+.results div p {
     font-size: 16px; 
     color: black;
     margin: 2px; 
 }
 
-#results div audio {
+.results div audio {
     margin-top: 10px; 
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 
