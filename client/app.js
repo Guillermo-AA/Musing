@@ -42,9 +42,11 @@ function renderTracks(tracks) {
     clearResults();
     tracks.forEach(track => {
         const trackDiv = document.createElement('div');
-        trackDiv.className = "track-container"
+        trackDiv.className = "track-container";
         trackDiv.innerHTML = `
-            <img src="${track.artworkUrl100}" alt="${track.trackName} artwork" />
+            <a href="${track.trackViewUrl}" target="_blank" rel="noopener noreferrer">
+                <img src="${track.artworkUrl100}" alt="${track.trackName} artwork" />
+            </a>
             <div class="track-info">
                 <h2>${track.trackName}</h2>
                 <h3>${track.artistName}</h3>
@@ -77,7 +79,7 @@ function renderTracks(tracks) {
 // Fetch tracks from the iTunes API
 async function fetchTracks(query) {
     try {
-        const response = await fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=song&limit=50`);
+        const response = await fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=song&limit=20`);
         const data = await response.json();
         return data.results || [];
     } catch (error) {
@@ -106,6 +108,33 @@ searchForm.addEventListener('submit', async (event) => {
     }
 
     renderTracks(filteredResults);
+});
+
+// Add a "Go to Top" button dynamically
+const goToTopButton = document.createElement('button');
+goToTopButton.textContent = 'Go to Top';
+goToTopButton.className = 'go-to-top'; 
+document.body.appendChild(goToTopButton);
+
+// Scroll event listener to detect when the user reaches the bottom
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight || window.innerHeight;
+
+    if (scrollTop + clientHeight >= scrollHeight - 10) {
+        goToTopButton.style.display = 'block'; 
+    } else {
+        goToTopButton.style.display = 'none'; 
+    }
+});
+
+// Event listener for "Go to Top" button
+goToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth', 
+    });
 });
 
 
