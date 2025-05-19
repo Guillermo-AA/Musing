@@ -12,6 +12,8 @@
 
 <p align="left">Open the project and navigate to the client folder. Inside, you'll find the HTML file, which you can run (it is recommended that you use the Live Server Extension).<br><br>Enjoy looking for any song or artist you would like to hear!</p>
 
+<img src="./client/assets/screenshots/Musing_screenshot_02.png" width="700" />
+
 ###
 
 <h2 align="left">I coded with</h2>
